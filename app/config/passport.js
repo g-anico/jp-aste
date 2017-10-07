@@ -32,7 +32,7 @@ passport.use("local-signup", new LocalStrategy(
                 });
             }
         });
-    });
+    })
 );
 
 passport.use("local-login", new LocalStrategy(
@@ -49,7 +49,7 @@ passport.use("local-login", new LocalStrategy(
 
             return done(null, user);
         });
-    });
+    })
 );
 
 module.exports = passport;

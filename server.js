@@ -4,6 +4,7 @@ const express = require("express"),
     session = require("express-session"),
     mongoose = require("mongoose"),
     PORT = process.env.PORT || 8080,
+    passport = require("passport"),
     mongoUrl = process.env.MONGO_URI || "mongodb://localhost:27017/jpaste";
 
 // Body-parser stuff.
@@ -18,7 +19,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Connect Mongoose
-mongoose.connect(mongourl, { useMongoClient: true });
+mongoose.connect(mongoUrl, { useMongoClient: true });
 
 // Routes
 require("./app/controller/authentication.js")(app);
