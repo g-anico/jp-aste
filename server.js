@@ -22,7 +22,7 @@ mongoose.connect(mongourl, { useMongoClient: true });
 
 // Routes
 require("./app/controller/authentication.js")(app);
-require("./app/controller/html.js")(app);
+// require("./app/controller/html.js")(app);
 
 // Start Server
 app.listen(PORT);
