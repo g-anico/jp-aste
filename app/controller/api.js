@@ -20,7 +20,6 @@ module.exports = app => {
             if(err) { console.log(err) }
             if(!doc) { res.status(404).send("Paste not found."); }
             else {
-                console.log(doc)
                 if(doc.password) {
                     pw_paste = { 
                         id: doc._id,
@@ -58,6 +57,7 @@ module.exports = app => {
             new_paste.title = paste.title;
             new_paste.body = paste.body;
             if(paste.password) { new_paste.password = new_paste.generateHash(paste.password); }
+            if(paste.expire) { new_paste.path("createdAt").expire(paste.expire); }
             new_paste.save((err, doc) => {
                 if(err) { console.log(err) }
                 else { res.json(doc._id) }
@@ -75,6 +75,7 @@ module.exports = app => {
                     if(req.body.password) { doc.generateHash(req.body.password); }
                     if(req.body.title) { doc.title = req.body.title; }
                     if(req.body.body) { doc.body = req.body.body; }
+                    if(req.body.expire) { doc.path("createdAt").expires(req.body.expire) }
                     doc.save();
                 }
             });
@@ -97,4 +98,3 @@ module.exports = app => {
         }
     });
 }
-            
