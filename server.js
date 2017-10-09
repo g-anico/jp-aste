@@ -5,13 +5,17 @@ const express = require("express"),
     mongoose = require("mongoose"),
     PORT = process.env.PORT || 8080,
     passport = require("passport"),
-    mongoUrl = process.env.MONGO_URI || "mongodb://localhost:27017/jpaste";
+    mongoUrl = process.env.MONGO_URI || "mongodb://localhost:27017/jpaste",
+    methodOverride = require("method-override");
 
 // Body-parser stuff.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+// Method Override.
+app.use(methodOverride('_method'));
 
 // Passport & Sessions
 app.use(session({ secret: "lolcat", resave: true, saveUninitialized: true }));
@@ -23,8 +27,8 @@ mongoose.connect(mongoUrl, { useMongoClient: true });
 
 // Routes
 require("./app/controller/authentication.js")(app);
-// require("./app/controller/html.js")(app);
-
+require("./app/controller/html.js")(app);
+require("./app/controller/api.js")(app);
 // Start Server
 app.listen(PORT);
 

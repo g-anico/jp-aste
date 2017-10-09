@@ -20,6 +20,9 @@ const UserSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Paste"
     }],
+    apikey: {
+        type: String
+    }
 });
 
 UserSchema.methods.generateHash = function(password) {
