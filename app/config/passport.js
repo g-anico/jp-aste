@@ -1,7 +1,8 @@
 const passport = require("passport"),
     LocalStrategy = require("passport-local").Strategy,
     mongoose = require("mongoose"),
-    User = require("../models/users.js");
+    User = require("../models/users.js"),
+    hat = require("hat");
 mongoose.Promise = Promise;
 
 // Keep authentication state across HTTP requests
@@ -25,6 +26,7 @@ passport.use("local-signup", new LocalStrategy(
             let newUser = new User();
             newUser.username = username;
             newUser.password = newUser.generateHash(password);
+            newUser.apikey = hat();
             newUser.save(err => {
                 if(err) { throw err }
                 return done(null, newUser);

@@ -1,6 +1,14 @@
 const User = require("../models/users.js"),
     Paste = require("../models/pastes.js");
 
+function apiCheck(key, res) {
+    User.findOne({ "apikey": key }, (err, doc) => {
+        if(err) { console.log(err) }
+        if(!doc) { return false; }
+        return doc;
+    });
+}
+
 module.exports = app => {
     app.get("/api/userinfo", (req, res) => {
         if(!req.user) {
@@ -49,6 +57,10 @@ module.exports = app => {
 
 
     app.post("/api/paste", (req, res) => {
+        if(req.query.apikey) {
+            req.user = apiCheck(req.query.apikey);
+        }
+        
         if(!req.user) {
             res.status(500).send("Please login.");
         } else {
@@ -66,6 +78,10 @@ module.exports = app => {
     });
 
     app.put("/api/paste/:pasteid", (req, res) => {
+        if(req.query.apikey) {
+            req.user = apicheck(req.query.apikey);
+        }
+
         if(!req.user) {
             res.status(500).send("Please login.");
         } else {
@@ -83,6 +99,10 @@ module.exports = app => {
     });
 
     app.delete("/api/paste/:pasteid", (req, res) => {
+        if(req.query.apikey) {
+            req.user = apiCheck(req.query.apikey);
+        }
+
         if(!req.user) {
             res.status(500).send("Please login.");
         } else {
@@ -98,3 +118,6 @@ module.exports = app => {
         }
     });
 }
+
+
+

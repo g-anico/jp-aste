@@ -25,7 +25,7 @@ module.exports = app => {
         }
     });
     
-    app.get("/:pasteid", (req, res) => {
+    app.get("/paste/:pasteid", (req, res) => {
         const pasteid = req.params.pasteid;
         // TODO: set up page
     });
