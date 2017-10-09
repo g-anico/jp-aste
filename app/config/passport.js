@@ -16,7 +16,7 @@ passport.deserializeUser(function(obj, cb){
 passport.use("local-signup", new LocalStrategy(
     { usernameField: "username", passwordField: "password", passReqToCallback: true },
     function(req, username, password, done) {
-        username = username.toLowerCase();
+        username = username.toLowerCase().trim();
         User.findOne({ "username": username }, (err, user) => {
             if(err) { return done(err) }
             if(user) {

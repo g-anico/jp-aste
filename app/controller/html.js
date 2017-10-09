@@ -1,9 +1,10 @@
-module.exports => {
+module.exports = app => {
     app.get("/", (req, res) => {
         if(!req.user) {
             res.redirect("/login");
         } else {
-            res.send("");
+            // TODO: Update with actual page
+            res.sendFile("/home/nkim/Desktop/CodeBootCamp/jp-aste/test.html");
         }
     });
 
@@ -11,7 +12,8 @@ module.exports => {
         if(req.user) {
             res.redirect("/");
         } else {
-            res.send("");
+            // TODO: Update with actual page
+            res.sendFile("/home/nkim/Desktop/CodeBootCamp/jp-aste/form.html");
         }
     });
 
@@ -21,5 +23,10 @@ module.exports => {
         } else {
             res.send("");
         }
+    });
+    
+    app.get("/:pasteid", (req, res) => {
+        const pasteid = req.params.pasteid;
+        // TODO: set up page
     });
 }
