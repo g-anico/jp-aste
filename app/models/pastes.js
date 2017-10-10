@@ -11,7 +11,15 @@ let PasteSchema = new Schema({
     },
     password: {
         type: String,
-    }
+    },
+    user: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
 });
 
 PasteSchema.methods.generateHash = function(password) {
@@ -22,7 +30,7 @@ PasteSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
 };
 
-const Note = mongoose.model("Paste", PasteSchema);
+const Paste = mongoose.model("Paste", PasteSchema);
 
-module.exports = Note;
+module.exports = Paste;
 
