@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+
+<body>
+  <div class="image-container">
+  <img class="background" src="./images/jp.JPG" alt="">
+  </div>
+  <body>
+<div class="container">
+  <section id="content">
+      <form  action="/register" method="POST" autocomplete="on">
+          <h1> Sign up </h1>
+          <p>
+              <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+              <input id="usernamesignup" name="username" required="required" type="text" placeholder="mysuperusername690" />
+          </p>
+          <p>
+              <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+              <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+          </p>
+          <p>
+              <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+              <input id="passwordsignup" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/>
+          </p>
+          <p class="signin button">
+              <input type="submit" value="Sign up"/>
+          </p>
+          <p class="change_link">
+              Already a member ?
+              <a href="#tologin" class="to_register"> Go and log in </a>
+          </p>
+      </form>
+  		<!-- <div class="button">
+  			<a href="#">Download source file</a>
+  		<!-- </div><!-- button -->
+  	</section><!-- content -->
+  </div><!-- container -->
+  </body>
+
+      <script  src="/assets/js/index.js"></script>
+
+</body>
+</html>
