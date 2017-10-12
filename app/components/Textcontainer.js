@@ -4,13 +4,11 @@ var React = require('react');
 
 var Textcontainer = React.createClass({
   render: function() {
-    <div className="text-container" style ={
-      {
-        "width": "90vw",
-        "backgroundColor": "lightsteelgray",
-        
-      }
-    }>
-      <textarea className="jpaste" name="text" placeholder=" Paste Text Here" spellcheck="false"></textarea>
+    <div className="text-container">
+      <code><textarea spellcheck="false" style="" placeholder="Paste code here"></textarea><code>
+      <hr>
+      <button type="button" class="btn btn-primary">submit</button>
     </div>
   }
+});
+module.exports = Textcontainer;

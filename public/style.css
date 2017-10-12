@@ -1,0 +1,18 @@
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+code {
+    font-family: monospace;
+    font-size: 24px
+
+}
+
+textarea {
+  width: 100%;
+  height: auto;
+  background-color: lightgray;
+  font: white;
+  padding: 0 auto;
+  margin: 0 auto;
+}

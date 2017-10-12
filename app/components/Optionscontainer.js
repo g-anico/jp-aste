@@ -5,6 +5,7 @@ var React = require('react');
 var Optionscontainer = React.createClass({
   render: function() {
     return (
+
       <div className="options-container">
         <div className="option">
           <span className="label">Title:</span>
@@ -13,10 +14,10 @@ var Optionscontainer = React.createClass({
 
 
         <div className="option">
-          <span className="label">Title:</span>
+          <span className="label">Name:</span>
           <input type="text" className="name" valuePlaceholder="Name (Optional)">
         </div>
-// can change these expiration times
+//can change these expiration times
         <div className="option">
           <span className="label">Expiration:</span>
           <select name="expiration">
@@ -30,6 +31,8 @@ var Optionscontainer = React.createClass({
         </div>
 
       </div>
-    )
+    );
   }
-})
+});
+
+module.exports = Optionscontainer;
