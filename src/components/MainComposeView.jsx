@@ -110,4 +110,4 @@ ComposeView.defaultProps = {
   }
 };
 
-export default connectStore(ComposeView);
+export default connectStore(MainComposeView);
