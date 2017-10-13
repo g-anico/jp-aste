@@ -18,6 +18,7 @@ var Navbar = React.createClass({
           </div>
         </nav>
       );
+}
 });
 
 module.exports = Navbar;
