@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JP-aste</title>
+</head>
+<body>
+    <nav>
+        <div class="userInfo">
+        <p id="username"></p>
+        </div>
+    </nav>
+    <form id="paste">
+        <input placeholder="title" name="title" id="title"><br>
+        <textarea placeholder="body" name="body" id="body"></textarea><br>
+        <input placeholder="password" name="password" id="password"><br>
+        <button type="submit" id="submitPaste">Submit</button>
+    </form>
+    
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $("#paste").on("submit", evt => {
+        evt.preventDefault();
+        $.post("/api/paste", {
+            title: $("#title").val(),
+            body: $("#body").val(),
+            password: $("#password").val()
+        }).then(response => {
+            window.location = "/paste/" + response;
+        });
+    });
+</script>
+</body>
+</html>

@@ -11,8 +11,11 @@ code {
 textarea {
   width: 100%;
   height: auto;
-  background-color: lightgray;
-  font: white;
+  background-color: white;
+  color: black !important;
   padding: 0 auto;
   margin: 0 auto;
+  font-family: monospace;
+  font-size: 24px
+
 }

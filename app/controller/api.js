@@ -29,7 +29,7 @@ module.exports = app => {
             if(!doc) { res.status(404).send("Paste not found."); }
             else {
                 if(doc.password) {
-                    pw_paste = { 
+                    pw_paste = {
                         id: doc._id,
                         pw: true
                     }
@@ -41,7 +41,7 @@ module.exports = app => {
             }
         });
     });
-    
+
     app.get("/api/paste/pw/:pasteid", (req, res) => {
         const pasteid = req.params.pasteid;
         Paste.findById(pasteid, (err, doc) => {
@@ -60,7 +60,7 @@ module.exports = app => {
         if(req.query.apikey) {
             req.user = apiCheck(req.query.apikey);
         }
-        
+
         if(!req.user) {
             res.status(500).send("Please login.");
         } else {
@@ -68,6 +68,8 @@ module.exports = app => {
             let new_paste = new Paste();
             new_paste.title = paste.title;
             new_paste.body = paste.body;
+
+            new_paste.user = req.user.username;
             if(paste.password) { new_paste.password = new_paste.generateHash(paste.password); }
             if(paste.expire) { new_paste.path("createdAt").expire(paste.expire); }
             new_paste.save((err, doc) => {
@@ -118,6 +120,3 @@ module.exports = app => {
         }
     });
 }
-
-
-

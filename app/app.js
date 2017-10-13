@@ -6,20 +6,7 @@ var Navbar = require('./components/Navbar');
 var Optionscontainer = require('./components/Optionscontainer');
 var Textcontainer = require('./components/Textcontainer');
 
-ReactDOM.render(
-  //here we deploy all components into a single main-container
-//<Navbar />
-//<Optionscontainer />
-//<Textcontainer />, d
-<Navbar />, document.getElementById("app")
+//here we deploy all components into a single main-container
+ReactDOM.render(<Navbar />, document.getElementById("app"));
 
-);
-ReactDOM.render(
-  <Optionscontainer />, document.getElementById("options")
-
-);
-
-ReactDOM.render(
-  <Textcontainer />, document.getElementById("textContainer")
-
-);
+ReactDOM.render(<Textcontainer />, document.getElementById("textContainer"));
