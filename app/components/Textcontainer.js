@@ -76,9 +76,9 @@ var Textcontainer = React.createClass({
 
       <code><textarea onChange={this.handleChange} name="body" spellCheck="false" placeholder="Paste code here"
         style={
-        {"width":"800px",
-          "height": "400px",
-          
+        {"width":"90%",
+          "height": "90%",
+
         }
       }></textarea></code>
 
