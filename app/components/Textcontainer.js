@@ -5,12 +5,7 @@ var axios = require('axios');
 
 var Textcontainer = React.createClass({
   getInitialState() {
-    return {
-      title: '',
-      password: '',
-      body: '',
-      expire: ''
-    }
+    return {title: '', password: '', body: '', expire: ''}
   },
 
   handleChange(event) {
@@ -25,73 +20,59 @@ var Textcontainer = React.createClass({
     // axios.post with the form body that you have from this.state
     event.preventDefault();
 
-    console.log({
+    console.log({title: this.state.title, password: this.state.password, body: this.state.body, expire: this.state.expire});
+
+    axios.post('/api/paste', {
       title: this.state.title,
       password: this.state.password,
       body: this.state.body,
       expire: this.state.expire
-    });
-
-    axios.post('/api/paste', {
-      title: this.state.title ,
-      password: this.state.password,
-      body: this.state.body,
-      expire: this.state.expire
-    })
-    .then(function(response) {
+    }).then(function(response) {
       console.log(response);
-    })
-    .catch(function(error) {
+    }).catch(function(error) {
       console.log(error);
     });
   },
   render() {
     return (
-    <form onSubmit={this.handleSubmit}>
-    <div className="text-container">
-      <div className="options-container">
+      <form onSubmit={this.handleSubmit}>
+        <div className="text-container">
+          <div className="options-container">
 
-         <label className="option">Title:
-           <input type="text" name="title" className="title" onChange={this.handleChange} valuePlaceholder="Untitled" />
-          </label>
+            <label className="option">Title:
+              <input type="text" name="title" className="title" onChange={this.handleChange} valuePlaceholder="Untitled"/>
+            </label>
 
-          <label className="option">Password:
-            <input type="text" name="password" className="password" onChange={this.handleChange} valuePlaceholder="Your Name" />
-           </label>
+            <label className="option">Password:
+              <input type="password" name="password" className="password" onChange={this.handleChange} valuePlaceholder="Your Name"/>
+            </label>
 
-          <label className="option">Expiration:
-          <select name="expire" value={this.state.expire} onChange={this.handleChange}>
-            <option value=""></option>
-            <option value="1 Hours">1 Hour</option>
-            <option value="6 Hours">6 Hours</option>
-            <option value="24 Hours">1 Day</option>
-            <option value="7 Days">1 Week</option>
-            <option value="30 Days">1 Month</option>
+            <label className="option">Expiration:
+              <select name="expire" value={this.state.expire} onChange={this.handleChange}>
+                <option value=""></option>
+                <option value="1 Hours">1 Hour</option>
+                <option value="6 Hours">6 Hours</option>
+                <option value="24 Hours">1 Day</option>
+                <option value="7 Days">1 Week</option>
+                <option value="30 Days">1 Month</option>
 
-          </select>
-        </label>
+              </select>
+            </label>
 
-      </div>
+          </div>
 
+          <code>
+            <textarea onChange={this.handleChange} name="body" spellCheck="false" placeholder="Paste code here" style={{
+              "width": "90%",
+              "height": "40vw"
+            }}></textarea>
+          </code>
 
-      <code><textarea onChange={this.handleChange} name="body" spellCheck="false" placeholder="Paste code here"
-        style={
-        {"width":"90%",
-          "height": "40vw"
-
-        }
-      }></textarea></code>
-
-
-      <hr/>
-      <button className="btn btn-primary">submit</button>
-
-
-</div>
-</form>
-  );
+          <hr/>
+          <button className="btn btn-primary">submit</button>
+        </div>
+      </form>
+    );
   }
-
-
 });
 module.exports = Textcontainer;
