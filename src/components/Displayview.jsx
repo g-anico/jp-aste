@@ -3,7 +3,7 @@ import { Grid, Segment } from "semantic-ui-react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { github } from "react-syntax-highlighter/dist/styles";
 
-import connectStore from "../connect";
+// import connectStore from "../connect";
 import "./DisplayView.css";
 
 class DisplayView extends React.Component {
