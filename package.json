@@ -37,7 +37,7 @@
     "semantic-ui-react": "^0.74.2"
   },
   "devDependencies": {
-    "webpack": "^3.7.1"
+    "webpack": "^3.7.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
   },
