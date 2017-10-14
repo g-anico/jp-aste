@@ -18,7 +18,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(methodOverride('_method'));
 
 // Static Files
-app.use("/assets", express.static(__dirname + "/views/assets"));
+app.use("/assets", express.static(__dirname + "/public/assets"));
 
 // Passport & Sessions
 app.use(session({ secret: "lolcat", resave: true, saveUninitialized: true }));
