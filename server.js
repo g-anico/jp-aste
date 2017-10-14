@@ -5,7 +5,7 @@ const express = require("express"),
     mongoose = require("mongoose"),
     PORT = process.env.PORT || 8080,
     passport = require("passport"),
-    mongoUrl = process.env.MONGO_URI || "mongodb://localhost:27017/jpaste",
+    mongoUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/jpaste",
     methodOverride = require("method-override");
 
 // Body-parser stuff.
