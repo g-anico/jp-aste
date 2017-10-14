@@ -40,11 +40,11 @@ var Textcontainer = React.createClass({
           <div className="options-container">
 
             <label className="option">Title:
-              <input type="text" name="title" className="title" onChange={this.handleChange} valuePlaceholder="Untitled"/>
+              <input type="text" name="title" className="title" onChange={this.handleChange} placeholder="Untitled"/>
             </label>
 
             <label className="option">Password:
-              <input type="password" name="password" className="password" onChange={this.handleChange} valuePlaceholder="Your Name"/>
+              <input type="password" name="password" className="password" onChange={this.handleChange} placeholder="(optional)" />
             </label>
 
             <label className="option">Expiration:
@@ -67,9 +67,10 @@ var Textcontainer = React.createClass({
               "height": "40vw"
             }}></textarea>
           </code>
-
-          <hr/>
+          
+          <div>
           <button className="btn btn-primary">submit</button>
+          </div>
         </div>
       </form>
     );
