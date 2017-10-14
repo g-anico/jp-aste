@@ -27,7 +27,7 @@ var Textcontainer = React.createClass({
       body: this.state.body,
       expire: this.state.expire
     }).then(function(response) {
-        window.location = "/paste/" + response.data; 
+        window.location = "/paste/" + response.data;
     }).catch(function(error) {
       console.log(error);
     });
@@ -60,13 +60,14 @@ var Textcontainer = React.createClass({
 
           </div>
 
-          <code>
-            <textarea onChange={this.handleChange} name="body" spellCheck="false" placeholder="Paste code here" style={{
+          <pre><code>
+            <textarea onChange={this.handleChange} name="body" spellCheck="false" placeholder="Paste code here"
+              style={{
               "width": "90%",
               "height": "40vw"
             }}></textarea>
-          </code>
-          
+          </code></pre>
+
           <div>
           <button className="btn btn-primary">submit</button>
           </div>
