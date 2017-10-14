@@ -22,8 +22,6 @@ module.exports = app => {
         if(req.user) {
             res.redirect("/");
         } else {
-            res.send("");
-
             res.sendFile(path.join(__dirname + "/../../public/register.html"));
         }
     });
