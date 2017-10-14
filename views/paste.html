@@ -12,7 +12,7 @@
     const url = "/api/paste/" + window.location.pathname.split("/")[2];
     console.log(url)
     $.get(url).then(response => {
-        $("#paste-body").text(response.body);
+        $("#paste-body").html(response.body);
     });
 </script>
 </body>
