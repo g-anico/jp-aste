@@ -7,18 +7,18 @@ var Navbar = React.createClass({
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" href="#">jp-aste</a>
+            <a className="navbar-brand" href="/">jp-aste</a>
           </div>
 
           <ul className="nav navbar-nav">
             <li className="active">
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="#">Register</a>
+                <a href="/register">Register</a>
             </li>
             <li>
-              <a href="#">Login</a>
+                <a href="/login">Login</a>
             </li>
           </ul>
         </div>
