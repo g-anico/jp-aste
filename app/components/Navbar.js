@@ -15,10 +15,10 @@ var Navbar = React.createClass({
               <a href="/">Home</a>
             </li>
             <li>
-                <a href="/register">Register</a>
+                <a href="/login">Login</a>
             </li>
             <li>
-                <a href="/login">Login</a>
+                <a href="/logout">Logout</a>
             </li>
           </ul>
         </div>
