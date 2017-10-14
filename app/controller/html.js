@@ -6,9 +6,8 @@ module.exports = app => {
         if(!req.user) {
             res.redirect("/login");
         } else {
-            // TODO: Update with actual page
             res.sendFile("/home/nkim/Desktop/CodeBootCamp/jp-aste/test.html");
-            res.sendFile(path.join(__dirname + "/../../views/index.html"));
+            res.sendFile(path.join(__dirname + "/../../public/index.html"));
         }
     });
 
@@ -18,7 +17,7 @@ module.exports = app => {
         } else {
             // TODO: Update with actual page
             res.sendFile("/home/nkim/Desktop/CodeBootCamp/jp-aste/form.html");
-            res.sendFile(path.join(__dirname + "/../../views/login.html"));
+            res.sendFile(path.join(__dirname + "/../../public/login.html"));
         }
     });
 
@@ -28,7 +27,7 @@ module.exports = app => {
         } else {
             res.send("");
 
-            res.sendFile(path.join(__dirname + "/../../views/register.html"));
+            res.sendFile(path.join(__dirname + "/../../public/register.html"));
         }
     });
 
