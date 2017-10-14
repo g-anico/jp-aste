@@ -30,7 +30,6 @@ module.exports = app => {
 
     app.get("/paste/:pasteid", (req, res) => {
         const pasteid = req.params.pasteid;
-
-        res.sendFile(path.join(__dirname + "/../../views/paste.html"));
+        res.sendFile(path.join(__dirname + "/../../public/paste.html"));
     });
 }
