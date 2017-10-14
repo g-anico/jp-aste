@@ -3,28 +3,29 @@ body {
 }
 
 code {
-    font-family: monospace;
-    font-size: 24px
+  font-family: monospace;
+  font-size: 24px
 }
 
 textarea {
-  /*width: 100%;
-  height: 50vw;*/
   background-color: white;
   color: black !important;
   padding: 0 auto;
   margin: 0 auto;
   font-family: monospace;
-  font-size: 24px
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-
+  font-size: 24px -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.option{
+
+.option {
   margin-right: 10px;
 }
+
 .text-container {
   margin-left: 10px;
+}
+
+.btn{
+  margin-left: 4px;
 }
