@@ -2,7 +2,6 @@
 var React = require('react');
 var axios = require('axios');
 //create Textcontainer component and render function to display the component
-
 var Textcontainer = React.createClass({
   getInitialState() {
     return {title: '', password: '', body: '', expire: ''}
@@ -20,15 +19,15 @@ var Textcontainer = React.createClass({
     // axios.post with the form body that you have from this.state
     event.preventDefault();
 
-    console.log({title: this.state.title, password: this.state.password, body: this.state.body, expire: this.state.expire});
-
+      //console.log({title: this.state.title, password: this.state.password, body: this.state.body, expire: this.state.expire});
+    console.log("uh...")
     axios.post('/api/paste', {
       title: this.state.title,
       password: this.state.password,
       body: this.state.body,
       expire: this.state.expire
     }).then(function(response) {
-        window.location = "/paste/" + response 
+        window.location = "/paste/" + response.data; 
     }).catch(function(error) {
       console.log(error);
     });
