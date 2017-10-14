@@ -17,12 +17,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Method Override.
 app.use(methodOverride('_method'));
 
-<<<<<<< HEAD
-=======
 // Static Files
-app.use("/assets", express.static(__dirname + "/views/assets"));
+app.use("/assets", express.static(__dirname + "/public/assets"));
 
->>>>>>> bca198683e7e7df972d725d55b4dc0b1419777d2
 // Passport & Sessions
 app.use(session({ secret: "lolcat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -33,18 +30,9 @@ mongoose.connect(mongoUrl, { useMongoClient: true });
 
 // Routes
 require("./app/controller/authentication.js")(app);
-<<<<<<< HEAD
-<<<<<<< HEAD
-// require("./app/controller/html.js")(app);
+require("./app/controller/html.js")(app);
+require("./app/controller/api.js")(app);
 
-=======
-require("./app/controller/html.js")(app);
-require("./app/controller/api.js")(app);
->>>>>>> 2860e7a0663b2419bfdff83a13b0d64da0f20bb9
-=======
-require("./app/controller/html.js")(app);
-require("./app/controller/api.js")(app);
->>>>>>> bca198683e7e7df972d725d55b4dc0b1419777d2
 // Start Server
 app.listen(PORT);
 

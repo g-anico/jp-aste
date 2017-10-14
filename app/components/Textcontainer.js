@@ -28,7 +28,7 @@ var Textcontainer = React.createClass({
       body: this.state.body,
       expire: this.state.expire
     }).then(function(response) {
-      console.log(response);
+        window.location = "/paste/" + response 
     }).catch(function(error) {
       console.log(error);
     });
