@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "semantic-ui-react";
 import PropTypes from "prop-types";
 
-import connectStore from "../connect";
+// import connectStore from "../connect";
 
 import "./PasteButton.css";
 

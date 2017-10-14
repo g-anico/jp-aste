@@ -11,6 +11,7 @@ const rootEl = document.getElementById('root');
 
 const render = Component =>
   ReactDOM.render(
+    hljs.initHighlightingOnLoad();
     <AppContainer>
       <Component />
     </AppContainer>,
